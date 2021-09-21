@@ -40,17 +40,7 @@ namespace MyntraDemoTestProjectUsingSelenium
             report.Flush();
 
         }
-        //[Test, Order(2)]
-
-        //public void AddToBag()
-        //{
-        //    test = report.CreateTest("Tests");
-        //    test.Log(Status.Info, "MYNTRAAUTOMATION");
-        //    ActionDo.ActionDo.AddToBagFeature(driver);
-        //    test.Log(Status.Pass, "AddToBag TestCases Passed");
-        //    report.Flush();
-
-        //}
+        
 
         //testing for TakeScreenshot
 
