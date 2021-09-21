@@ -33,23 +33,24 @@ namespace MyntraDemoTestProjectUsingSelenium.Base
             log4net.Config.XmlConfigurator.Configure(repository, fileInfo);
 
             log.Info("Entering Setup");
-
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.AddArgument("--disable-notifications");
+            driver = new ChromeDriver(options);
             driver.Manage().Window.Maximize();
             driver.Url = "https://www.myntra.com/";
             log.Debug("navigating to url");
 
             log.Info("Exiting setup");
 
-
+            
 
             //Implicit wait
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(1000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(500);
 
 
 
             //Explicit wait
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1000));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(500));
             wait.IgnoreExceptionTypes(typeof(NoSuchElementException));
         }
         
@@ -60,7 +61,7 @@ namespace MyntraDemoTestProjectUsingSelenium.Base
         [TearDown]
         public void TearDown()
         {
-            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(2000);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(500);
             driver.Quit();
         }
 

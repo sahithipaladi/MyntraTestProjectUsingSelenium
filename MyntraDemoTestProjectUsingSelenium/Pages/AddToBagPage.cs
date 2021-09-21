@@ -17,8 +17,20 @@ namespace MyntraDemoTestProjectUsingSelenium.Pages
             PageFactory.InitElements(driver, this);
         }
 
-       //adding the items into bag  from myntra using findsby method
+        //searching the items from myntra using findsby method
+        [FindsBy(How = How.XPath, Using = "//input[@class='desktop-searchBar']")]
+        [CacheLookup]
+        public IWebElement searchbar;
 
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'product-productMetaInfo'] [1]")]
+        [CacheLookup]
+        public IWebElement Product;
+
+        [FindsBy(How = How.XPath, Using = "//p[@class='size-buttons-unified-size']")]
+        [CacheLookup]
+        public IWebElement ProductSize;
+
+        //adding the items into bag  from myntra using findsby method
         [FindsBy(How = How.XPath, Using = "//span[@class='myntraweb-sprite pdp-whiteBag sprites-whiteBag pdp-flex pdp-center']")]
         [CacheLookup]
         public IWebElement addtobagbutton;

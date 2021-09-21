@@ -19,5 +19,11 @@ namespace MyntraDemoTestProjectUsingSelenium.Pages
         [FindsBy(How = How.XPath, Using = "//input[@class='desktop-searchBar']")]
         [CacheLookup]
         public IWebElement searchbar;
+
+        [FindsBy(How = How.XPath, Using = "//div[@class = 'product-productMetaInfo'][1]")]
+        [CacheLookup]
+        public IWebElement Product;
+
+        
     }
 }
